@@ -100,6 +100,7 @@ func makeKey(key token.Key, uids []*packet.UserId) (*openpgp.Entity, error) {
 			Name:          uid.Name,
 			UserId:        uid,
 			SelfSignature: sig,
+			Signatures:    []*packet.Signature{sig},
 		}
 	}
 	return entity, nil
